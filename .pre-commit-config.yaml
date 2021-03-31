@@ -1,0 +1,21 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    - id: trailing-whitespace
+    - id: check-added-large-files
+    - id: debug-statements
+    - id: flake8
+      language_version: python3
+      additional_dependencies: [ "flake8-colors",
+                                 "flake8-docstrings>=1.3.1",
+                                 "flake8-import-order>=0.9",
+                                 "flake8-typing-imports>=1.1",
+                                 "pep8-naming"]
+      args: [billpay.py, setup.py]
+-   repo: https://github.com/ambv/black
+    rev: 19.3b0
+    hooks:
+    - id: black
+      args: [billpay.py, setup.py]
+      language_version: python3
